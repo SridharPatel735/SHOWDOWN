@@ -38,7 +38,6 @@ namespace GravityTest
         Stopwatch bulletDelayWatch2 = new Stopwatch();
         Stopwatch reloadWatch = new Stopwatch();
         Stopwatch bulletDelayWatch = new Stopwatch();
-        Stopwatch musicWatch = new Stopwatch();
 
         //Creating the varibles for the heros
         int bulletX2, bulletY2, hero2Health, bullets2, heroX2, heroY2, bulletSpeed2;
@@ -46,7 +45,7 @@ namespace GravityTest
         int jumpCounter2 = -1;
         int jumpCounter = -1;
         string direction = "right";
-        SoundPlayer song = new SoundPlayer(GameTemplateTest.Properties.Resources.fightMusic);
+        SoundPlayer song = new SoundPlayer(GameTemplateTest.Properties.Resources.MaleGrunt);
         int heroX, heroY, heroWidth, heroSpeed, jumpHeight, bulletX, bulletY, bulletSpeed, bullets, heroHealth;
 
 
@@ -77,8 +76,6 @@ namespace GravityTest
             bullets2 = 30;
             bulletDelayWatch2.Start();
             bulletSpeed2 = -25;
-            song.Play();
-            musicWatch.Start();
             heroBox.BackgroundImage = DifficultySetting.player1[1];
             heroBox2.BackgroundImage = DifficultySetting.player2[0];
             if (DifficultySetting.color == true)
@@ -242,7 +239,6 @@ namespace GravityTest
             BulletMechanics();
             CollisionCheck();
             HeroHealthCheck();
-            Music();
             Refresh();
         }
 
@@ -462,6 +458,7 @@ namespace GravityTest
             //Checking the collisons
             if (heroBox.Bounds.IntersectsWith(bulletBox2.Bounds))
             {
+                song.Play();
                 heroHealth--;
                 healthLabel.Text = heroHealth + "";
                 if (direction2 == "left")
@@ -475,6 +472,7 @@ namespace GravityTest
             }
             if (heroBox2.Bounds.IntersectsWith(bulletBox.Bounds))
             {
+                song.Play();
                 hero2Health--;
                 healthLabel2.Text = hero2Health + "";
                 if (direction == "left")
@@ -559,14 +557,6 @@ namespace GravityTest
                 }
                 Thread.Sleep(1000);
                 Application.Exit();
-            }
-        }
-        public void Music()
-        {
-            //Checking to play the music again
-            if (musicWatch.ElapsedMilliseconds >= 29000)
-            {
-                song.Play();
             }
         }
     }

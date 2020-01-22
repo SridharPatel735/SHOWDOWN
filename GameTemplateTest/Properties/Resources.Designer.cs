@@ -61,11 +61,12 @@ namespace GameTemplateTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        ///   Looks up a localized string similar to ID3UTPE1David FesliyanTXXXcommentFesliyanStudios.comTDRC2019TCONSoundtrackTIT2The Epic Boss FightTALBFesliyanStudios.comTRCK1TSSELavf57.27.100ÿû”Info­
+        ///        ///!$&amp;)+.0368;=@BEHJMORTWY\_adfiknqsvx{}€‚…ˆŠ’”—šœŸ¡¤¦©¬®±³¶¸»½ÀÃÅÈÊÍÏÒÕ×ÚÜßáäæéìîñóöøûþLavc57.27$Z” [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream fightMusic {
+        internal static string fightMusic {
             get {
-                return ResourceManager.GetStream("fightMusic", resourceCulture);
+                return ResourceManager.GetString("fightMusic", resourceCulture);
             }
         }
         
@@ -76,6 +77,15 @@ namespace GameTemplateTest.Properties {
             get {
                 object obj = ResourceManager.GetObject("JungleBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream MaleGrunt {
+            get {
+                return ResourceManager.GetStream("MaleGrunt", resourceCulture);
             }
         }
         

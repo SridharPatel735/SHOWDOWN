@@ -239,5 +239,11 @@
   <ItemGroup>
     <None Include="Resources\Pause Image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fightMusic.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaleGrunt.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
