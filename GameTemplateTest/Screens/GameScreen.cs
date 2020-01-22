@@ -45,7 +45,8 @@ namespace GravityTest
         int jumpCounter2 = -1;
         int jumpCounter = -1;
         string direction = "right";
-        SoundPlayer song = new SoundPlayer(GameTemplateTest.Properties.Resources.MaleGrunt);
+        SoundPlayer hitSound = new SoundPlayer(GameTemplateTest.Properties.Resources.MaleGrunt);
+        SoundPlayer bulletSound = new SoundPlayer(GameTemplateTest.Properties.Resources.gunshot);
         int heroX, heroY, heroWidth, heroSpeed, jumpHeight, bulletX, bulletY, bulletSpeed, bullets, heroHealth;
 
 
@@ -380,6 +381,7 @@ namespace GravityTest
             if (shot == true && bullets != 0)
             {
                 shot = false;
+                bulletSound.Play();
                 if (direction == "right")
                 {
                     bulletX = heroX + 75;
@@ -418,6 +420,7 @@ namespace GravityTest
             if (shot2 == true && bullets2 != 0)
             {
                 shot2 = false;
+                bulletSound.Play();
                 if (direction2 == "right")
                 {
                     bulletX2 = heroX2 + 75;
@@ -458,7 +461,7 @@ namespace GravityTest
             //Checking the collisons
             if (heroBox.Bounds.IntersectsWith(bulletBox2.Bounds))
             {
-                song.Play();
+                hitSound.Play();
                 heroHealth--;
                 healthLabel.Text = heroHealth + "";
                 if (direction2 == "left")
@@ -472,7 +475,7 @@ namespace GravityTest
             }
             if (heroBox2.Bounds.IntersectsWith(bulletBox.Bounds))
             {
-                song.Play();
+                hitSound.Play();
                 hero2Health--;
                 healthLabel2.Text = hero2Health + "";
                 if (direction == "left")

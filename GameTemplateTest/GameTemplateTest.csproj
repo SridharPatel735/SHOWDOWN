@@ -245,5 +245,8 @@
   <ItemGroup>
     <None Include="Resources\MaleGrunt.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\51749__erkanozan__gunshot.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
